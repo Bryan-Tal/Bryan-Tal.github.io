@@ -1,3 +1,11 @@
+# Website Settings
+title: blank
+first_name: Bryan
+last_name: Talavera
+email: brn.t4l4@gmail.com
+
+
+
 lsi: false
 safe: true
 source: [main]
