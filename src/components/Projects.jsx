@@ -4,6 +4,7 @@ import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.jpg";
+import projImg5 from "../assets/img/project-img5.png";
 import { ProjectCard } from "./ProjectCard";
 import "../css/Projects.css";
 
@@ -29,11 +30,11 @@ const projects = [
     imgUrl: projImg1,
     projectUrl: "https://github.com/Bryan-Tal/Providing_Data_Driven_Suggestions",
     impact: [
-      "82% recall identifying at-risk employees using XGBoost ensemble",
-      "Applied SHAP values to surface top drivers of turnover",
-      "Compared 3 model architectures to optimize precision-recall tradeoff",
+      "Random Forest classifier achieving 0.95 AUC and 90% recall on test set",
+      "Surfaced that 100% of employees with 7 concurrent projects left the company",
+      "Compared 3 classifiers via 5-fold GridSearchCV, refit on ROC-AUC",
     ],
-    stack: ["Python", "XGBoost", "Scikit-learn", "Pandas", "SHAP"],
+    stack: ["Python", "Random Forest", "XGBoost", "Scikit-learn", "Pandas", "GridSearchCV"],
   },
   {
     title: "Predicting NYC Taxi Gratuities",
@@ -41,11 +42,23 @@ const projects = [
     imgUrl: projImg2,
     projectUrl: "https://github.com/Bryan-Tal/Predicting_NYC_Taxi_Gratuities",
     impact: [
-      "Predicted generous tippers (>20%) across 408k+ trip records",
-      "Engineered features from GPS, time, and fare data",
-      "XGBoost model outperformed baseline logistic regression by 15%",
+      "Tuned XGBoost achieved 83% accuracy / 84% F1 on 408k+ trips",
+      "Beat Random Forest baseline by +12.7 F1 points after 5-fold GridSearchCV",
+      "Engineered time-of-day, day-of-week, and rate-code features from raw timestamps",
     ],
     stack: ["Python", "XGBoost", "Scikit-learn", "Pandas", "Matplotlib"],
+  },
+  {
+    title: "Predicting House Prices with OLS & Ridge Regression",
+    domain: "Machine Learning",
+    imgUrl: projImg5,
+    projectUrl: "https://github.com/Bryan-Tal/Predicting_House_Prices_OLS",
+    impact: [
+      "Implemented OLS and Ridge from scratch using the normal equation in NumPy",
+      "Validated all 5 LR assumptions (Shapiro-Wilk, K-S, VIF, residual plots)",
+      "Champion Ridge: R² = 0.66, RMSE = 0.108 across 4 scaling methods × 7 α values",
+    ],
+    stack: ["Python", "NumPy", "Pandas", "SciPy", "Matplotlib"],
   },
   {
     title: "MedDash — Health Metrics Dashboard",

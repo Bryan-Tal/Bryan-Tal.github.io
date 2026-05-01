@@ -2,7 +2,7 @@ import "../css/FeaturedProject.css";
 import projImg1 from "../assets/img/project-img1.png";
 
 export const FeaturedProject = () => {
-  const stack = ["Python", "XGBoost", "Random Forest", "Scikit-learn", "Pandas", "SHAP", "Matplotlib"];
+  const stack = ["Python", "Random Forest", "XGBoost", "Scikit-learn", "Pandas", "GridSearchCV", "Matplotlib"];
 
   return (
     <section className="featured-project" id="featured">
@@ -33,17 +33,19 @@ export const FeaturedProject = () => {
               <div className="case-col">
                 <span className="case-col-heading">The Approach</span>
                 <p>
-                  Built and compared Decision Tree, Random Forest, and XGBoost models.
-                  Applied SHAP values to expose which features drove predictions and
-                  inform actionable HR policy.
+                  Built and compared Decision Tree, Random Forest, and XGBoost
+                  classifiers via 5-fold GridSearchCV refit on ROC-AUC. The Random
+                  Forest champion exposed satisfaction, project count, and overwork as
+                  top drivers — surfacing that 100% of employees with 7 projects left
+                  the company.
                 </p>
               </div>
               <div className="case-col">
                 <span className="case-col-heading">The Result</span>
-                <span className="result-metric">82% recall</span>
+                <span className="result-metric">0.95 AUC</span>
                 <p>
-                  on identifying employees likely to leave, enabling proactive HR
-                  intervention before talent is lost.
+                  with 90% recall on identifying at-risk employees, enabling proactive
+                  HR intervention before talent is lost.
                 </p>
               </div>
             </div>
