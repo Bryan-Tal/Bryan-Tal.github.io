@@ -72,18 +72,18 @@ const projects = [
     ],
     stack: ["React", "D3.js", "JavaScript", "CSS", "Python"],
   },
-  {
-    title: "Visual Analysis of the S&P 500 ETF",
-    domain: "Data Viz",
-    imgUrl: projImg4,
-    projectUrl: "https://bryan-tal.github.io/SPY-Visual-Analysis/",
-    impact: [
-      "Visualized 15+ years of SPY market data with interactive D3.js charts",
-      "Built zoom, pan, and timeframe-select interactions from scratch",
-      "Displays volume, price, and moving averages in a single dashboard",
-    ],
-    stack: ["D3.js", "HTML", "CSS", "JavaScript"],
-  },
+  // {
+  //   title: "Visual Analysis of the S&P 500 ETF",
+  //   domain: "Data Viz",
+  //   imgUrl: projImg4,
+  //   projectUrl: "https://bryan-tal.github.io/SPY-Visual-Analysis/",
+  //   impact: [
+  //     "Visualized 15+ years of SPY market data with interactive D3.js charts",
+  //     "Built zoom, pan, and timeframe-select interactions from scratch",
+  //     "Displays volume, price, and moving averages in a single dashboard",
+  //   ],
+  //   stack: ["D3.js", "HTML", "CSS", "JavaScript"],
+  // },
   
 ];
 
