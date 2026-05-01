@@ -1,78 +1,139 @@
 .banner {
-    margin-top: 0;
-    padding: 260px 0 100px 0;
-    background-image: url('../assets/img/project-background.jpg');
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-  }
-  /* Styling for 'welcome to my portfolio' */
-  .banner .tagline {
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    padding: 8px 10px;
-    background: linear-gradient(90.21deg, rgba(0, 0, 0, 0.205) -5.91%, rgba(116, 105, 207, 0.5) 111.58%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    font-size: 20px;
-    margin-bottom: 16px;
-    display: inline-block;
-  }
-  .banner h1 {
-    font-size: 65px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    line-height: 1;
-    margin-bottom: 20px;
-    display: block;
-  }
-  .banner p {
-    color: #ffffff;
-    font-size: 18px;
-    letter-spacing: 0.8px;
-    line-height: 1.5em;
-    width: 96%;
-  }
-  .banner button {
-    color: #fff;
-    font-weight: 700;
-    font-size: 20px;
-    margin-top: 60px;
-    letter-spacing: 0.8px;
-    display: flex;
-    align-items: center;
-  }
-/* Controls the styling/movement of the link with text"Let's Connect" */
-  .banner button a{
-    color: #fff;
-    text-decoration: none;
-  }
-  /* Controls the styling/movement of the button next to "Let's Connect" */
-  .banner button svg {
-    font-size: 25px;
-    margin-left: 10px;
-    transition: 0.3s ease-in-out;
-    line-height: 1;
-  }
-  .banner button:hover svg {
-    margin-left: 25px;
-  }
-  /* This is responsible for making the image bounce up and down */
-  .banner img {
-    animation: updown 3s linear infinite;
-  }
+  margin-top: 0;
+  padding: 180px 0 120px 0;
+  background:
+    radial-gradient(ellipse at 75% 40%, rgba(0,180,216,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 80%, rgba(124,58,237,0.09) 0%, transparent 50%),
+    var(--color-bg);
+  text-align: left;
+}
 
-  @keyframes updown {
-      0% {
-          transform: translateY(-20px);
-      }
-      50% {
-          transform: translateY(20px);
-      }
-      100% {
-          transform: translateY(-20px);
-      }
+.banner-greeting {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.banner-name {
+  font-size: 62px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+
+.banner-role {
+  font-size: 34px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+}
+
+.role-sep {
+  color: var(--color-accent);
+  margin: 0 8px;
+}
+
+.banner-tagline {
+  font-size: 19px;
+  color: var(--color-text);
+  letter-spacing: 0.4px;
+  line-height: 1.55;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.banner-credentials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+
+.cred-tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  padding: 5px 12px;
+  border-radius: 4px;
+}
+
+.cred-sep {
+  color: var(--color-border);
+}
+
+.banner-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary-cta {
+  background: var(--gradient-primary);
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  letter-spacing: 0.4px;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.btn-primary-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,180,216,0.28);
+}
+
+.btn-secondary-cta {
+  background: transparent;
+  color: var(--color-text) !important;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  letter-spacing: 0.4px;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.btn-secondary-cta:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent) !important;
+  transform: translateY(-3px);
+}
+
+.banner-img {
+  animation: updown 3s ease-in-out infinite;
+}
+
+@keyframes updown {
+  0%   { transform: translateY(-16px); }
+  50%  { transform: translateY(16px); }
+  100% { transform: translateY(-16px); }
+}
+
+@media (max-width: 991px) {
+  .banner {
+    padding: 120px 0 60px 0;
+    text-align: center;
   }
-  .txt-rotate > .wrap {
-    border-right: 0.08em solid #666;
-  }
+  .banner-name { font-size: 42px; }
+  .banner-role { font-size: 24px; }
+  .banner-tagline { width: 100%; }
+  .banner-credentials { justify-content: center; }
+  .banner-ctas { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .banner-name { font-size: 34px; }
+  .banner-role { font-size: 20px; }
+}

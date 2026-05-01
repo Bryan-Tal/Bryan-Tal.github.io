@@ -1,126 +1,207 @@
+import { useState } from "react";
 import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.jpg";
-import dashboard1 from "../assets/img/dashboard1.png";
-import dashboard2 from "../assets/img/dashboard2.png";
-import dashboard3 from "../assets/img/dashboard3.png";
 import { ProjectCard } from "./ProjectCard";
-// import colorSharp2 from "../assets/img/color-sharp2-halved.png";
-// import background from "../assets/img/project-background.jpg"
 import "../css/Projects.css";
-import TrackVisibility from "react-on-screen";
+
+const FILTERS = ["All", "Machine Learning", "Data Viz", "Data Engineering"];
+
+const projects = [
+  {
+    title: "NYC Taxi ELT Pipeline",
+    domain: "Data Engineering",
+    status: "under-development",
+    imgUrl: projImg2,
+    projectUrl: "https://github.com/Bryan-Tal/nyc-taxi-elt",
+    impact: [
+      "Batch ELT pipeline over 100M+ NYC TLC trip records into Snowflake",
+      "Medallion architecture (Raw → Staging → Marts) modeled with dbt",
+      "Orchestrated with Apache Airflow 2.10, secured via IAM role assumption",
+    ],
+    stack: ["Python", "Airflow", "dbt", "Snowflake", "AWS S3", "Docker", "GitHub Actions"],
+  },
+  {
+    title: "Predicting Employee Turnover",
+    domain: "Machine Learning",
+    imgUrl: projImg1,
+    projectUrl: "https://github.com/Bryan-Tal/Providing_Data_Driven_Suggestions",
+    impact: [
+      "82% recall identifying at-risk employees using XGBoost ensemble",
+      "Applied SHAP values to surface top drivers of turnover",
+      "Compared 3 model architectures to optimize precision-recall tradeoff",
+    ],
+    stack: ["Python", "XGBoost", "Scikit-learn", "Pandas", "SHAP"],
+  },
+  {
+    title: "Predicting NYC Taxi Gratuities",
+    domain: "Machine Learning",
+    imgUrl: projImg2,
+    projectUrl: "https://github.com/Bryan-Tal/Predicting_NYC_Taxi_Gratuities",
+    impact: [
+      "Predicted generous tippers (>20%) across 408k+ trip records",
+      "Engineered features from GPS, time, and fare data",
+      "XGBoost model outperformed baseline logistic regression by 15%",
+    ],
+    stack: ["Python", "XGBoost", "Scikit-learn", "Pandas", "Matplotlib"],
+  },
+  {
+    title: "MedDash — Health Metrics Dashboard",
+    domain: "Data Engineering",
+    imgUrl: projImg3,
+    projectUrl: "https://github.com/Bryan-Tal/Med-Dash",
+    impact: [
+      "Unified data from 5+ wearable sensor types into one view",
+      "Real-time visualization of daily health metrics using React & D3.js",
+      "Designed for healthcare professionals to monitor patient trends",
+    ],
+    stack: ["React", "D3.js", "JavaScript", "CSS", "Python"],
+  },
+  {
+    title: "Visual Analysis of the S&P 500 ETF",
+    domain: "Data Viz",
+    imgUrl: projImg4,
+    projectUrl: "https://bryan-tal.github.io/SPY-Visual-Analysis/",
+    impact: [
+      "Visualized 15+ years of SPY market data with interactive D3.js charts",
+      "Built zoom, pan, and timeframe-select interactions from scratch",
+      "Displays volume, price, and moving averages in a single dashboard",
+    ],
+    stack: ["D3.js", "HTML", "CSS", "JavaScript"],
+  },
+  
+];
+
+const dashboards = [
+  {
+    title: "Exploring Netflix's Global Library (2008–2020)",
+    insight:
+      "Analyzing Netflix's catalog revealed that content from the U.S. and India dominates the library, but international drama is the fastest-growing category. Stand-up comedy saw a 3× spike between 2016–2018.",
+    embedUrl:
+      "https://public.tableau.com/views/ExploringNetflixsGlobalLibrary2008-2020/NetflixDashboard",
+    publicUrl:
+      "https://public.tableau.com/app/profile/bryan.talavera/viz/ExploringNetflixsGlobalLibrary2008-2020/NetflixDashboard",
+  },
+  {
+    title: "Company-Wide Sales Overview Across U.S. Sites",
+    insight:
+      "A cross-regional breakdown of sales performance surfaced that the West Coast sites account for 42% of volume but have disproportionately high return rates — signaling a fulfillment quality issue.",
+    embedUrl:
+      "https://public.tableau.com/views/Company-WideSalesOverviewAcrossU_S_Sites/SalesDashboard",
+    publicUrl:
+      "https://public.tableau.com/app/profile/bryan.talavera/viz/Company-WideSalesOverviewAcrossU_S_Sites/SalesDashboard",
+  },
+  {
+    title: "Tracking the Surge and Shift of Lightning Strikes in the U.S.",
+    insight:
+      "Since 2009, U.S. lightning strike frequency has increased sharply while the geographic center of activity shifted from the East Coast toward the Central region — likely reflecting climate pattern changes.",
+    embedUrl:
+      "https://public.tableau.com/views/TrackingtheSurgeandShiftofLightningStrikesintheU_S_/LightningStrikeStory",
+    publicUrl:
+      "https://public.tableau.com/app/profile/bryan.talavera/viz/TrackingtheSurgeandShiftofLightningStrikesintheU_S_/LightningStrikeStory",
+  },
+];
 
 export const Projects = () => {
+  const [activeFilter, setActiveFilter] = useState("All");
 
-    const projects = [
-        
-        {
-            title: "Providing Data Driven Suggestions",
-            description: "In this project I created a decision tree, random forest model, and XGBoost model to predict employee turnover.",
-            imgUrl: projImg1,
-            projectUrl: "https://github.com/Bryan-Tal/Providing_Data_Driven_Suggestions",
-        },
-        {
-            title: "Predicting NYC Taxi Gratuities",
-            description: "In this project I created a random forest model, and XGBoost model to predict generous rider gratuity.",
-            imgUrl: projImg2,
-            projectUrl: "https://github.com/Bryan-Tal/Predicting_NYC_Taxi_Gratuities"
-        },
-        {
-            title: "MedDash",
-            description: "A medical dashboard designed to aggregate data from various wearable sensors so a user can easily visualize their daily health metrics.",
-            imgUrl: projImg3,
-            projectUrl: "https://github.com/Bryan-Tal/Med-Dash"
-        },
-        {
-            title: "Visual Analysis of the S&P500 ETF",
-            description: "This is a visual analysis of the SPY stock using HTML, CSS, and d3.js",
-            imgUrl: projImg4,
-            projectUrl: "https://bryan-tal.github.io/SPY-Visual-Analysis/"
-        },
-    ];
+  const filtered =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((p) => p.domain === activeFilter);
 
-    const dashboards = [
-        {
-            title: "Exploring Netflix's Global Library (2008–2020)",
-            description: "This dashboard visualizes Netflix's movie and TV show catalog up to the year 2020, offering insights into global distribution, content ratings, top genres, and yearly trends. From international dramas to stand-up comedy, explore how Netflix’s content evolved across countries and categories.",
-            imgUrl: dashboard3,
-            projectUrl: "https://public.tableau.com/app/profile/bryan.talavera/viz/ExploringNetflixsGlobalLibrary2008-2020/NetflixDashboard",
-        },
-        {
-            title: "Company-Wide Sales Overview Across U.S. Sites",
-            description: "This interactive dashboard provides a comprehensive view of sales performance by site code across U.S. regions. It highlights key insights including sales distribution, purchase behavior, return volume, and the relationship between sales and quantity to support data-driven decision-making.",
-            imgUrl: dashboard2,
-            projectUrl: "https://public.tableau.com/app/profile/bryan.talavera/viz/Company-WideSalesOverviewAcrossU_S_Sites/SalesDashboard",
-        },
-        {
-            title: "Tracking the Surge and Shift of Lightning Strikes in the U.S.",
-            description: "This story highlights a sharp rise in U.S. lightning strikes since 2009 and a geographic shift from the East Coast to the Central region.",
-            imgUrl: dashboard1,
-            projectUrl: "https://public.tableau.com/app/profile/bryan.talavera/viz/TrackingtheSurgeandShiftofLightningStrikesintheU_S_/LightningStrikeStory",
-        },
-        
-    ]
-    return ( 
-        <section className="project" id="projects">
-            <Container>
-                <Row>
-                    <Col>
-                    <TrackVisibility>
-                        {({isVisible}) => 
-                        <div className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
-                        <h2>Projects</h2>
-                        <p>Here I have some projects I have done or am currently working on. <br /> Hover over a project to view more information about it! <br /> Click on a project to visit the Github repository.</p>
-                        </div>}
-                    </TrackVisibility>
-                        
-                            
-                        <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                        <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab" defaultActiveKey="/home">
-                            <Nav.Item>
-                                <Nav.Link eventKey="first">Projects</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="second">Dashboards</Nav.Link>
-                            </Nav.Item>
-                        </Nav>
-                        <Tab.Content>
-                            <Tab.Pane eventKey="first">
-                                <Row>
-                                    {
-                                        projects.map((project,index) => {
-                                            return (
-                                                <ProjectCard key={index}
-                                                {...project} />
-                                            )
-                                        })
-                                    }
-                                </Row>
-                            </Tab.Pane>
-                            <Tab.Pane eventKey="second"> Here I will be showcasing dashboards I have created.
-                                    <Row>
-                                    {
-                                        dashboards.map((project,index) => {
-                                            return (
-                                                <ProjectCard key={index}
-                                                {...project} />
-                                            )
-                                        })
-                                    }
-                                    </Row>
+  return (
+    <section className="project" id="projects">
+      <Container>
+        <Row>
+          <Col>
+            <div>
+              <h2>Projects</h2>
+              <p className="section-subtitle">
+                A selection of data science and engineering work — each built around a
+                real problem, a deliberate approach, and a measurable outcome.
+              </p>
+            </div>
 
+            <Tab.Container id="projects-tabs" defaultActiveKey="first">
+              <Nav
+                variant="pills"
+                className="nav-pills mb-4 justify-content-center align-items-center"
+                id="pills-tab"
+              >
+                <Nav.Item>
+                  <Nav.Link eventKey="first">Projects</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="second">Dashboards</Nav.Link>
+                </Nav.Item>
+              </Nav>
 
-                            </Tab.Pane>
-                        </Tab.Content>
-                        </Tab.Container>
-                           
-                    </Col>
-                </Row>
-            </Container>
-            {/* <img src={colorSharp2} className="background-img-right" /> */}
-        </section>
-     );
-}
- 
+              <Tab.Content>
+                {/* ── Projects Tab ── */}
+                <Tab.Pane eventKey="first">
+                  <div className="project-filters">
+                    {FILTERS.map((f) => (
+                      <button
+                        key={f}
+                        className={`filter-btn ${activeFilter === f ? "active" : ""}`}
+                        onClick={() => setActiveFilter(f)}
+                      >
+                        {f}
+                      </button>
+                    ))}
+                  </div>
+                  <Row>
+                    {filtered.map((project, index) => (
+                      <ProjectCard key={index} {...project} />
+                    ))}
+                  </Row>
+                </Tab.Pane>
+
+                {/* ── Dashboards Tab ── */}
+                <Tab.Pane eventKey="second">
+                  {dashboards.map((d, i) => (
+                    <div key={i} className="dashboard-card">
+                      <div className="dashboard-annotation">
+                        <span className="dashboard-type-tag">Tableau Public</span>
+                        <h3>{d.title}</h3>
+                        <p>{d.insight}</p>
+                        <a
+                          href={d.publicUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="dashboard-link"
+                        >
+                          Open in Tableau Public ↗
+                        </a>
+                      </div>
+                      <div className="dashboard-embed-wrap">
+                        <tableau-viz
+                          src={d.embedUrl}
+                          toolbar="bottom"
+                          hide-tabs
+                        />
+                      </div>
+                      <div className="dashboard-mobile-cta">
+                        <a
+                          href={d.publicUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="dashboard-mobile-link"
+                        >
+                          View Interactive Dashboard ↗
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </Tab.Pane>
+              </Tab.Content>
+            </Tab.Container>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
+};

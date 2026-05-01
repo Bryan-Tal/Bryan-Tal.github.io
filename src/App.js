@@ -1,17 +1,19 @@
 import './css/App.css';
 import { NavBar } from './components/NavBar';
 import { Banner } from './components/Banner';
-import { Skills } from './components/Skills';
+import { FeaturedProject } from './components/FeaturedProject';
 import { Projects } from './components/Projects';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Contact } from './components/Contact';
+import { Skills } from './components/Skills';
 import { AboutMe } from './components/AboutMe';
+import { Contact } from './components/Contact';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
       <Banner />
+      <FeaturedProject />
       <Projects />
       <Skills />
       <AboutMe />

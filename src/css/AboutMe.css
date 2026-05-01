@@ -1,77 +1,309 @@
-/* About Me Section*/
-#about {
-    padding: 5em 5em;
-    color: #ababab;
-    margin-top: -50px;
+.about {
+  padding: 80px 0;
+  background: var(--color-bg);
 }
 
-.row {
-    display:flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.about-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 64px;
+  align-items: start;
 }
 
-.about-col-1 {
-    flex-basis: 35%;
+.about-img-wrap img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
 }
 
-.about-col-1 img {
-    width: 100%;
-    border-radius: 15px;
+.about-heading {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 20px;
 }
 
-.about-col-2 {
-    flex-basis: 60%;
+.about-bio {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 36px;
 }
 
-.subtitle {
-    font-size: 60px;
-    font-weight: 600;
-    color: #fff;
-}
-/* Creates mini tabs in the about me section in order to showcase experience, education, etc */
+/* ── Tab Links ─────────────────────────────────────────── */
 .tab-titles {
-    display: flex;
-    margin: 20px 0 40px;
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0;
 }
 
 .tab-links {
-    margin-right: 50px;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    position: relative;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  position: relative;
+  padding-bottom: 14px;
+  transition: var(--transition);
 }
 
 .tab-links::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #ff004f;
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    transition: 0.5s;
+  content: '';
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  transition: 0.4s ease;
 }
 
-.tab-links.active-link::after{
-    width: 50%;
+.tab-links.active-link {
+  color: var(--color-text);
 }
 
-.tab-contents ul li {
-    list-style: none;
-    margin: 10px 0;
+.tab-links.active-link::after {
+  width: 100%;
 }
 
-.tab-contents ul li span {
-    color: #b54769;
-    font-size: 14px;
-}
-/* Prevents all tab contents from being displayed at once */
-.tab-contents { 
-    display: none;
+/* ── Tab Content ───────────────────────────────────────── */
+.tab-contents {
+  display: none;
 }
 
 .tab-contents.active-tab {
-    display: block;
-} 
+  display: block;
+}
+
+/* ── Timeline ──────────────────────────────────────────── */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  position: absolute;
+  left: -28px;
+  top: 4px;
+  flex-shrink: 0;
+}
+
+.timeline-year {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-accent);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.timeline-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 3px;
+  line-height: 1.35;
+}
+
+.timeline-sub {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.timeline-sub a {
+  color: var(--color-accent);
+}
+
+.timeline-sub a:hover {
+  text-decoration: underline;
+}
+
+/* ── Learning Path / Roadmap Tab ──────────────────────── */
+.roadmap-intro {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.roadmap-intro a {
+  color: var(--color-accent);
+}
+
+.roadmap-intro a:hover {
+  text-decoration: underline;
+}
+
+.roadmap-block {
+  margin-bottom: 20px;
+}
+
+.roadmap-block-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.roadmap-skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.roadmap-skill-list li {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.roadmap-star {
+  color: var(--color-success);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.roadmap-half {
+  color: var(--color-accent);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.phase-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phase-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.phase-icon {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+  margin-top: 1px;
+  width: 14px;
+  text-align: center;
+}
+
+.phase-complete .phase-icon { color: var(--color-success); }
+.phase-active  .phase-icon  { color: var(--color-accent); }
+.phase-pending .phase-icon  { color: var(--color-surface-2); }
+
+.phase-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.phase-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.phase-complete .phase-name { color: var(--color-text); }
+.phase-active   .phase-name { color: var(--color-accent); }
+
+.phase-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  opacity: 0.75;
+}
+
+.roadmap-link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-accent);
+  display: inline-block;
+  margin-top: 16px;
+  transition: var(--transition);
+}
+
+.roadmap-link:hover {
+  color: var(--color-text);
+}
+
+/* ── Looking For section ───────────────────────────────── */
+.looking-for {
+  margin-top: 36px;
+  padding: 20px 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius);
+  text-align: left;
+}
+
+.looking-for-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.looking-for p {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .about-img-wrap {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  .about-heading { text-align: center; }
+  .about-bio { text-align: center; }
+  .tab-titles { justify-content: center; }
+}

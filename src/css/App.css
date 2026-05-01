@@ -14,19 +14,33 @@
   src: url('../assets/font/CentraNo2-Book.ttf');
   font-weight: 400;
 }
-/* Default CSS */
 
+/* ── Design Tokens ─────────────────────────────────────── */
+:root {
+  --color-bg:        #0D1117;
+  --color-surface:   #161B22;
+  --color-surface-2: #21262D;
+  --color-accent:    #00B4D8;
+  --color-accent-2:  #7C3AED;
+  --color-text:      #E6EDF3;
+  --color-text-muted:#8B949E;
+  --color-success:   #3FB950;
+  --color-danger:    #f85149;
+  --color-border:    rgba(139, 148, 158, 0.2);
+  --gradient-primary: linear-gradient(135deg, #00B4D8, #7C3AED);
+  --gradient-overlay: linear-gradient(135deg, rgba(0,180,216,0.88), rgba(124,58,237,0.88));
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --transition: 0.3s ease-in-out;
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* svg {
-  background: #eee;
-  overflow: visible;
-  display: block;
-  width:100%
-} */
 
 html {
   scroll-behavior: smooth;
@@ -37,12 +51,12 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: #121212 !important;
-  color: #fff !important;
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
   font-family: Centra, sans-serif !important;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   line-height: normal;
@@ -73,57 +87,21 @@ input:focus, textarea:focus, select:focus {
   outline: none;
 }
 
-@media (min-width:1700px) {
-	main .container {
-		max-width: 100%;
-		padding: 0 150px;
-	}
+@media (min-width: 1700px) {
+  main .container {
+    max-width: 100%;
+    padding: 0 150px;
+  }
 }
 
 p.success {
-	color: green;
+  color: var(--color-success);
 }
 
 p.danger {
-	color: red;
+  color: var(--color-danger);
 }
-
 
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

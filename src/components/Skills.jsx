@@ -1,99 +1,125 @@
-import '../css/Skills.css'
-import Carousel from 'react-multi-carousel';
-import "react-multi-carousel/lib/styles.css";
-import { Container, Row, Col } from 'react-bootstrap';
-import { UseCreateBarChart } from './useCreateBarChart';
-import TrackVisibility from "react-on-screen";
+import { Container } from "react-bootstrap";
+import "../css/Skills.css";
+
+const SkillDots = ({ level }) => (
+  <span className="skill-dots">
+    {[1, 2, 3, 4, 5].map((i) => (
+      <span key={i} className={`dot ${i <= level ? "filled" : "empty"}`} />
+    ))}
+  </span>
+);
+
+const categories = [
+  {
+    title: "Languages",
+    skills: [
+      { name: "Python", level: 5 },
+      { name: "SQL",    level: 4 },
+      { name: "R",      level: 3 },
+    ],
+  },
+  {
+    title: "ML & Analytics",
+    skills: [
+      { name: "Pandas",       level: 5 },
+      { name: "Scikit-learn", level: 5 },
+      { name: "XGBoost",      level: 4 },
+      { name: "Statsmodels",  level: 4 },
+      { name: "SciPy",        level: 4 },
+    ],
+  },
+  {
+    title: "Data Visualization",
+    skills: [
+      { name: "Tableau",    level: 4 },
+      { name: "Matplotlib", level: 4 },
+      { name: "Seaborn",    level: 4 },
+      { name: "D3.js",      level: 3 },
+      { name: "Plotly",     level: 3 },
+    ],
+  },
+  {
+    title: "Web & Dev Tools",
+    skills: [
+      { name: "React",        level: 4 },
+      { name: "JavaScript",   level: 4 },
+      { name: "HTML / CSS",   level: 5 },
+      { name: "Git / GitHub", level: 4 },
+    ],
+  },
+];
+
+const certifications = [
+  {
+    name: "Google Data Analytics Professional Certificate",
+    issuer: "Google · Coursera · 2024",
+    url: "https://www.credly.com/badges/d51d1b36-ccfe-4cf4-b63e-a473056ba9cc/public_url",
+    icon: "📊",
+  },
+  {
+    name: "B.S. Data Science",
+    issuer: "UC San Diego · 2024",
+    url: null,
+    icon: "🎓",
+  },
+];
 
 export const Skills = () => {
-    const responsive = {
-        superLargeDesktop: {
-          // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 3000 },
-          items: 5
-        },
-        desktop: {
-          breakpoint: { max: 3000, min: 1024 },
-          items: 3
-        },
-        tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 2
-        },
-        mobile: {
-          breakpoint: { max: 464, min: 0 },
-          items: 1
-        }
-      };
-      
-      var programmingScripting = [
-        {name: "Python", value: 90},
-        {name: "SQL", value: 85},
-        {name: "R",value: 75},
-      ];
-      var barWebDev = [
-        {name: "HTML", value: 90},
-        {name: "CSS", value: 80},
-        {name: "JavaScript",value: 85},
-        {name: "react.js", value: 80},
-        
-      ];
-      var barPythonPackages = [
-        {name: "Pandas", value: 90},
-        {name: "Statsmodels", value: 85},
-        {name: "Scikit-learn", value: 90},
-        {name: "SciPy", value: 80},
-      ];
-      var barDataVizTools = [
-        {name: "Tableau", value: 85},
-        {name: "Seaborn", value: 80},
-        {name: "Matplotlib", value: 85},
-        {name: "d3.js", value: 70},
-        {name: "Microsoft Excel", value: 80}
-      ];
-      
+  return (
+    <section className="skill" id="skills">
+      <Container>
+        <div className="skill-inner">
+          <h2>Skills</h2>
+          <p className="skill-subtitle">
+            Proficient across the full data workflow — from querying and cleaning
+            to modeling, evaluating, and communicating results visually.
+          </p>
 
-      
-      
-    return ( 
-        <section className="skill" id="skills">
-            <Container>
-                <Row>
-                    <Col>
-                    <div className="skill-bx">
-                      <TrackVisibility>
-                        {({isVisible}) => 
-                        <div className={isVisible ? "animate__animated animate__backInLeft" : ""}>
-                        <h2>Skills</h2>
-                        <p>Proficient in Python, SQL, and JavaScript, with expertise in data analysis, visualization, and predictive modeling. Experienced in machine learning frameworks, statistical analysis, and database management. Adept at using tools like Tableau, scikit-learn, and pandas to deliver actionable insights.</p>                
-                        </div>}
-                      </TrackVisibility>
-                        
-                        <Carousel responsive={responsive} infinite={false} className='skill-slider'>
-                          <div className='item'>
-                            <UseCreateBarChart data={programmingScripting}/>
-                            <h5>Programming & Scripting</h5>
-                          </div>
-                          <div className='item'>
-                            <UseCreateBarChart data={barWebDev}/>
-                            <h5>Web Development</h5>
-                          </div>
-                          <div className='item'>
-                            <UseCreateBarChart data={barDataVizTools}/>
-                            <h5>Data Visualization & Reporting</h5>
-                          </div>
-                          <div className='item'>
-                            <UseCreateBarChart data={barPythonPackages}/>
-                            <h5>Python Packages</h5>
-                          </div>
-                          
-                        </Carousel>
-                    </div>
-                    </Col>
-                </Row>
-            </Container>
-            {/* <img src={colorSharp}  className="background-image-left" /> */}
-        </section>
-     );
-}
- 
+          <div className="skills-grid">
+            {categories.map((cat) => (
+              <div key={cat.title} className="skill-category">
+                <span className="skill-category-title">{cat.title}</span>
+                <ul className="skill-list">
+                  {cat.skills.map((s) => (
+                    <li key={s.name} className="skill-item">
+                      <span className="skill-name">{s.name}</span>
+                      <SkillDots level={s.level} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="certs-row">
+            {certifications.map((cert) =>
+              cert.url ? (
+                <a
+                  key={cert.name}
+                  href={cert.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="cert-badge"
+                >
+                  <div className="cert-icon">{cert.icon}</div>
+                  <div className="cert-info">
+                    <span className="cert-name">{cert.name}</span>
+                    <span className="cert-issuer">{cert.issuer}</span>
+                  </div>
+                </a>
+              ) : (
+                <div key={cert.name} className="cert-badge">
+                  <div className="cert-icon">{cert.icon}</div>
+                  <div className="cert-info">
+                    <span className="cert-name">{cert.name}</span>
+                    <span className="cert-issuer">{cert.issuer}</span>
+                  </div>
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+};
