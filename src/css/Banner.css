@@ -69,6 +69,12 @@
   color: var(--color-border);
 }
 
+.cred-tag--building {
+  color: var(--color-accent);
+  border-color: rgba(0, 180, 216, 0.35);
+  background: rgba(0, 180, 216, 0.08);
+}
+
 .banner-ctas {
   display: flex;
   gap: 16px;

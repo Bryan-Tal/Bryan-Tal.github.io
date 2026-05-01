@@ -26,6 +26,8 @@ export const Banner = () => {
                     <span className="cred-tag">UC San Diego · B.S. Data Science</span>
                     <span className="cred-sep">·</span>
                     <span className="cred-tag">Google Certified Analyst</span>
+                    <span className="cred-sep">·</span>
+                    <span className="cred-tag cred-tag--building">Building in Data Engineering</span>
                   </div>
                   <div className="banner-ctas">
                     <a href="#projects" className="btn-primary-cta">
