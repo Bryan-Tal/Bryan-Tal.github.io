@@ -8,7 +8,7 @@ import projImg5 from "../assets/img/project-img5.png";
 import { ProjectCard } from "./ProjectCard";
 import "../css/Projects.css";
 
-const FILTERS = ["All", "Machine Learning", "Data Viz", "Data Engineering"];
+const FILTERS = ["All", "Machine Learning", "Data Engineering"];
 
 const projects = [
   {
