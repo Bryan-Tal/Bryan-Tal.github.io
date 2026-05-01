@@ -28,7 +28,7 @@ const projects = [
     title: "Predicting Employee Turnover",
     domain: "Machine Learning",
     imgUrl: projImg1,
-    projectUrl: "https://github.com/Bryan-Tal/Providing_Data_Driven_Suggestions",
+    projectUrl: "https://github.com/Bryan-Tal/Predicting_Employee_Churn",
     impact: [
       "Random Forest classifier achieving 0.95 AUC and 90% recall on test set",
       "Surfaced that 100% of employees with 7 concurrent projects left the company",
