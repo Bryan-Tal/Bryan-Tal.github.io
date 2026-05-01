@@ -28,34 +28,34 @@ const educationItems = [
 ];
 
 const interviewReady = [
-  "Git workflows — branching, PRs, rebasing, conflict resolution",
-  "Medallion architecture — applied as Raw / Staging / Marts schemas in project",
-  "Snowflake RBAC — functional vs. access role separation, design trade-offs",
-  "IAM principles — least privilege, role assumption, cross-cloud STS auth",
+  "Git workflows: branching, PRs, rebasing, conflict resolution",
+  "Medallion architecture: applied as Raw / Staging / Marts schemas in project",
+  "Snowflake RBAC: functional vs. access role separation, design trade-offs",
+  "IAM principles: least privilege, role assumption, cross-cloud STS auth",
 ];
 
 const inProgress = [
-  "Dimensional modeling — facts, dimensions, grain (designing in Phase 1)",
-  "Star schema design — applying to NYC TLC trip data",
-  "Apache Airflow — DAGs, operators, sensors (Phase 4 build target)",
+  "Dimensional modeling: facts, dimensions, grain (designing in Phase 1)",
+  "Star schema design: applying to NYC TLC trip data",
+  "Apache Airflow: DAGs, operators, sensors (Phase 4 build target)",
 ];
 
 const phases = [
   {
-    name: "Phase 0 — Platform Foundation",
+    name: "Phase 0: Platform Foundation",
     status: "complete",
     note: "Working Snowflake + AWS + Airflow stack · avg 7.45/10 synthesis drill",
   },
   {
-    name: "Phase 1 — Data Source & Exploration",
+    name: "Phase 1: Data Source & Exploration",
     status: "active",
     note: "Star schema design + data profiling",
   },
-  { name: "Phase 2 — Ingestion Layer",          status: "pending" },
-  { name: "Phase 3 — dbt Transformations",       status: "pending" },
-  { name: "Phase 4 — Airflow Orchestration",     status: "pending" },
-  { name: "Phase 5 — CI/CD with GitHub Actions", status: "pending" },
-  { name: "Phase 6 — Documentation & Polish",    status: "pending" },
+  { name: "Phase 2: Ingestion Layer",          status: "pending" },
+  { name: "Phase 3: dbt Transformations",       status: "pending" },
+  { name: "Phase 4: Airflow Orchestration",     status: "pending" },
+  { name: "Phase 5: CI/CD with GitHub Actions", status: "pending" },
+  { name: "Phase 6: Documentation & Polish",    status: "pending" },
 ];
 
 export const AboutMe = () => {
@@ -74,8 +74,8 @@ export const AboutMe = () => {
             <p className="about-bio">
               I'm a Data Science graduate from UC San Diego with hands-on experience
               in Python, machine learning, and data visualization. I've built predictive
-              models that tackle real-world problems in HR, transportation, and healthcare —
-              always with a focus on translating analysis into clear, actionable insights.
+              models that tackle real-world problems in HR, transportation, and healthcare.
+              Always with a focus on translating analysis into clear, actionable insights.
               I care about communicating the "so what" of data, not just the technical output.
             </p>
 
@@ -119,7 +119,7 @@ export const AboutMe = () => {
                 >
                   NYC Taxi ELT project
                 </a>
-                . Tracking 90+ concepts across 10 pillars — from theory through applied to interview-ready.
+                . Tracking 90+ concepts across 10 pillars, from theory through applied to interview-ready.
               </p>
 
               <div className="roadmap-block">
@@ -176,7 +176,7 @@ export const AboutMe = () => {
             <div className="looking-for">
               <span className="looking-for-label">Currently Looking For</span>
               <p>
-                Full-time roles in data analytics or data science — open to domains
+                Full-time roles in data analytics or data science. Open to domains
                 across tech, healthcare, finance, or anywhere data drives meaningful
                 decisions. Located in San Diego, CA · Open to remote or hybrid.
               </p>
