@@ -13,19 +13,32 @@ const categories = [
   {
     title: "Languages",
     skills: [
-      { name: "Python", level: 5 },
-      { name: "SQL",    level: 4 },
-      { name: "R",      level: 3 },
+      { name: "Python",     level: 5 },
+      { name: "SQL",        level: 4 },
+      { name: "JavaScript", level: 4 },
+      { name: "R",          level: 3 },
     ],
   },
   {
-    title: "ML & Analytics",
+    title: "Machine Learning & Statistics",
     skills: [
-      { name: "Pandas",       level: 5 },
-      { name: "Scikit-learn", level: 5 },
-      { name: "XGBoost",      level: 4 },
-      { name: "Statsmodels",  level: 4 },
-      { name: "SciPy",        level: 4 },
+      { name: "Scikit-learn",        level: 5 },
+      { name: "Pandas",              level: 5 },
+      { name: "NumPy",               level: 5 },
+      { name: "XGBoost",             level: 4 },
+      { name: "SciPy",               level: 4 },
+      { name: "Statistical Testing", level: 4 },
+    ],
+  },
+  {
+    title: "Data Engineering",
+    skills: [
+      { name: "Apache Airflow", level: 3 },
+      { name: "dbt",            level: 3 },
+      { name: "Snowflake",      level: 3 },
+      { name: "AWS S3 & IAM",   level: 3 },
+      { name: "Docker",         level: 3 },
+      { name: "GitHub Actions", level: 3 },
     ],
   },
   {
@@ -35,16 +48,15 @@ const categories = [
       { name: "Matplotlib", level: 4 },
       { name: "Seaborn",    level: 4 },
       { name: "D3.js",      level: 3 },
-      { name: "Plotly",     level: 3 },
     ],
   },
   {
-    title: "Web & Dev Tools",
+    title: "Web & Tools",
     skills: [
       { name: "React",        level: 4 },
-      { name: "JavaScript",   level: 4 },
       { name: "HTML / CSS",   level: 5 },
       { name: "Git / GitHub", level: 4 },
+      { name: "Jupyter",      level: 5 },
     ],
   },
 ];
@@ -71,7 +83,7 @@ export const Skills = () => {
         <div className="skill-inner">
           <h2>Skills</h2>
           <p className="skill-subtitle">
-            Proficient across the full data workflow — from querying and cleaning
+            Proficient across the full data workflow, from querying and cleaning
             to modeling, evaluating, and communicating results visually.
           </p>
 

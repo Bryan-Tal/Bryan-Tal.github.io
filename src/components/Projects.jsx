@@ -28,7 +28,7 @@ const projects = [
     title: "Predicting Employee Turnover",
     domain: "Machine Learning",
     imgUrl: projImg1,
-    projectUrl: "https://github.com/Bryan-Tal/Providing_Data_Driven_Suggestions",
+    projectUrl: "https://github.com/Bryan-Tal/Predicting_Employee_Churn",
     impact: [
       "Random Forest classifier achieving 0.95 AUC and 90% recall on test set",
       "Surfaced that 100% of employees with 7 concurrent projects left the company",
@@ -61,7 +61,7 @@ const projects = [
     stack: ["Python", "NumPy", "Pandas", "SciPy", "Matplotlib"],
   },
   {
-    title: "MedDash — Health Metrics Dashboard",
+    title: "MedDash: Health Metrics Dashboard",
     domain: "Data Engineering",
     imgUrl: projImg3,
     projectUrl: "https://github.com/Bryan-Tal/Med-Dash",
@@ -100,7 +100,7 @@ const dashboards = [
   {
     title: "Company-Wide Sales Overview Across U.S. Sites",
     insight:
-      "A cross-regional breakdown of sales performance surfaced that the West Coast sites account for 42% of volume but have disproportionately high return rates — signaling a fulfillment quality issue.",
+      "A cross-regional breakdown of sales performance surfaced that the West Coast sites account for 42% of volume but have disproportionately high return rates, signaling a fulfillment quality issue.",
     embedUrl:
       "https://public.tableau.com/views/Company-WideSalesOverviewAcrossU_S_Sites/SalesDashboard",
     publicUrl:
@@ -109,7 +109,7 @@ const dashboards = [
   {
     title: "Tracking the Surge and Shift of Lightning Strikes in the U.S.",
     insight:
-      "Since 2009, U.S. lightning strike frequency has increased sharply while the geographic center of activity shifted from the East Coast toward the Central region — likely reflecting climate pattern changes.",
+      "Since 2009, U.S. lightning strike frequency has increased sharply while the geographic center of activity shifted from the East Coast toward the Central region, likely reflecting climate pattern changes.",
     embedUrl:
       "https://public.tableau.com/views/TrackingtheSurgeandShiftofLightningStrikesintheU_S_/LightningStrikeStory",
     publicUrl:
@@ -133,7 +133,7 @@ export const Projects = () => {
             <div>
               <h2>Projects</h2>
               <p className="section-subtitle">
-                A selection of data science and engineering work — each built around a
+                A selection of data science and engineering work, each built around a
                 real problem, a deliberate approach, and a measurable outcome.
               </p>
             </div>

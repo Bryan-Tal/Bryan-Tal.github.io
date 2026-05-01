@@ -36,7 +36,7 @@ export const FeaturedProject = () => {
                   Built and compared Decision Tree, Random Forest, and XGBoost
                   classifiers via 5-fold GridSearchCV refit on ROC-AUC. The Random
                   Forest champion exposed satisfaction, project count, and overwork as
-                  top drivers — surfacing that 100% of employees with 7 projects left
+                  top drivers, revealing that 100% of employees with 7 projects left
                   the company.
                 </p>
               </div>

@@ -20,7 +20,7 @@ export const NavBar = () => {
         setScrolled(false);
       } else {
         setScrolled(true);
-        // Rough breakpoints — adjust if section heights shift
+        // Rough breakpoints: adjust if section heights shift
         if (y < 1800) {
           onUpdateActiveLink('projects');
         } else if (y < 2600) {
