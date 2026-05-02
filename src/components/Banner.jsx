@@ -30,7 +30,7 @@ export const Banner = () => {
                     <span className="cred-tag cred-tag--building">Building in Data Engineering</span>
                   </div>
                   <div className="banner-ctas">
-                    <a href="#projects" className="btn-primary-cta">
+                    <a href="#featured" className="btn-primary-cta">
                       View My Work
                     </a>
                     <a
