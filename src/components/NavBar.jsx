@@ -10,6 +10,7 @@ import '../css/NavBar.css';
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -37,9 +38,22 @@ export const NavBar = () => {
 
   const onUpdateActiveLink = (value) => setActiveLink(value);
 
+  // Maps section key → DOM element id used as anchor
+  const sectionIds = { home: 'home', projects: 'featured', skills: 'skills', about: 'about' };
+
+  const handleNavClick = (section, e) => {
+    e.preventDefault();
+    onUpdateActiveLink(section);
+    setExpanded(false);
+    // Wait for Bootstrap collapse animation before scrolling so layout is stable
+    setTimeout(() => {
+      document.getElementById(sectionIds[section])?.scrollIntoView({ behavior: 'smooth' });
+    }, 300);
+  };
+
   return (
     <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Navbar expand="md" className={scrolled ? "scrolled" : ""} expanded={expanded} onToggle={setExpanded}>
         <Container>
           <Navbar.Brand href="/">
             <img src={logo} alt="Logo" />
@@ -52,28 +66,28 @@ export const NavBar = () => {
               <Nav.Link
                 href="#home"
                 className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'}
-                onClick={() => onUpdateActiveLink('home')}
+                onClick={(e) => handleNavClick('home', e)}
               >
                 Home
               </Nav.Link>
               <Nav.Link
                 href="#featured"
                 className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'}
-                onClick={() => onUpdateActiveLink('projects')}
+                onClick={(e) => handleNavClick('projects', e)}
               >
                 Projects
               </Nav.Link>
               <Nav.Link
                 href="#skills"
                 className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'}
-                onClick={() => onUpdateActiveLink('skills')}
+                onClick={(e) => handleNavClick('skills', e)}
               >
                 Skills
               </Nav.Link>
               <Nav.Link
                 href="#about"
                 className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'}
-                onClick={() => onUpdateActiveLink('about')}
+                onClick={(e) => handleNavClick('about', e)}
               >
                 About Me
               </Nav.Link>
@@ -89,7 +103,7 @@ export const NavBar = () => {
                   <img src={navIcon2} alt="Tableau Public" />
                 </a>
               </div>
-              <HashLink to="#connect">
+              <HashLink to="#connect" onClick={() => setExpanded(false)}>
                 <button className="vvd"><span>Let's Connect</span></button>
               </HashLink>
             </span>

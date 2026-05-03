@@ -17,7 +17,7 @@ export const Banner = () => {
                   <span className="banner-greeting">Hi, I'm</span>
                   <h1 className="banner-name">Bryan Talavera</h1>
                   <h2 className="banner-role">
-                    Data Scientist <span className="role-sep">&</span> Analyst
+                    Data Analyst <span className="role-sep">&</span> Analytics Engineer
                   </h2>
                   <p className="banner-tagline">
                     Turning raw data into decisions that matter.
@@ -30,7 +30,7 @@ export const Banner = () => {
                     <span className="cred-tag cred-tag--building">Building in Data Engineering</span>
                   </div>
                   <div className="banner-ctas">
-                    <a href="#projects" className="btn-primary-cta">
+                    <a href="#featured" className="btn-primary-cta">
                       View My Work
                     </a>
                     <a
