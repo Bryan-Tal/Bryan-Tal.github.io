@@ -67,10 +67,10 @@ const projects = [
     projectUrl: "https://github.com/Bryan-Tal/Med-Dash",
     impact: [
       "Unified data from 5+ wearable sensor types into one view",
-      "Real-time visualization of daily health metrics using React & D3.js",
+      "Real-time visualization of daily health metrics using React & eCharts",
       "Designed for healthcare professionals to monitor patient trends",
     ],
-    stack: ["React", "D3.js", "JavaScript", "CSS", "Python"],
+    stack: ["React", "JavaScript", "CSS", "Python"],
   },
   // {
   //   title: "Visual Analysis of the S&P 500 ETF",

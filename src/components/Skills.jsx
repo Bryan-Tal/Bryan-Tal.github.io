@@ -47,7 +47,7 @@ const categories = [
       { name: "Tableau",    level: 4 },
       { name: "Matplotlib", level: 4 },
       { name: "Seaborn",    level: 4 },
-      { name: "D3.js",      level: 3 },
+      { name: "React eCharts",    level: 3 },
     ],
   },
   {
