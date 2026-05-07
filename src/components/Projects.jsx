@@ -91,7 +91,7 @@ const dashboards = [
   {
     title: "Exploring Netflix's Global Library (2008–2020)",
     insight:
-      "Analyzing Netflix's catalog revealed that content from the U.S. and India dominates the library, but international drama is the fastest-growing category. Stand-up comedy saw a 3× spike between 2016–2018.",
+      "This dashboard visualizes Netflix's movie and TV show catalog up to the year 2020, offering insights into global distribution, content ratings, top genres, and yearly trends.",
     embedUrl:
       "https://public.tableau.com/views/ExploringNetflixsGlobalLibrary2008-2020/NetflixDashboard",
     publicUrl:
