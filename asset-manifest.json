@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.60300a83.css",
-    "main.js": "/static/js/main.f510c8f1.js",
+    "main.js": "/static/js/main.bb95e040.js",
     "static/js/453.093064d1.chunk.js": "/static/js/453.093064d1.chunk.js",
     "static/media/project-img3.png": "/static/media/project-img3.bf32b1f0c88640c32453.png",
     "static/media/Bryan_Talavera_Resume.pdf": "/static/media/Bryan_Talavera_Resume.c3d5565cb5047f5f5f8e.pdf",
@@ -20,11 +20,11 @@
     "static/media/logo.svg": "/static/media/logo.dcf28c73d59010af301b86887ab18f1a.svg",
     "static/media/nav-icon1.svg": "/static/media/nav-icon1.721d5414c26365f117e71d46b6641cb2.svg",
     "main.60300a83.css.map": "/static/css/main.60300a83.css.map",
-    "main.f510c8f1.js.map": "/static/js/main.f510c8f1.js.map",
+    "main.bb95e040.js.map": "/static/js/main.bb95e040.js.map",
     "453.093064d1.chunk.js.map": "/static/js/453.093064d1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.60300a83.css",
-    "static/js/main.f510c8f1.js"
+    "static/js/main.bb95e040.js"
   ]
 }
