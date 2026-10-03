@@ -208,7 +208,7 @@ export const AboutMe = () => {
             <div className="looking-for">
               <span className="looking-for-label">Currently Looking For</span>
               <p>
-                Full-time data analyst, analytics engineer, or data engineer roles. Open
+                Full-time data analyst, product analyst, or BI analyst roles. Open
                 to domains across tech, healthcare, finance, or anywhere data drives
                 meaningful decisions. Located in San Diego, CA · Open to remote or hybrid.
               </p>

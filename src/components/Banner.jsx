@@ -17,7 +17,7 @@ export const Banner = () => {
                   <span className="banner-greeting">Hi, I'm</span>
                   <h1 className="banner-name">Bryan Talavera</h1>
                   <h2 className="banner-role">
-                    Data Analyst <span className="role-sep">&</span> Analytics Engineer
+                    Data Analyst
                   </h2>
                   <p className="banner-tagline">
                     Turning raw data into decisions that matter.
