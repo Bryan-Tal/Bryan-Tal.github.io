@@ -1,0 +1,199 @@
+.experience {
+  padding: 80px 0;
+  border-top: 1px solid var(--color-border);
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(0,180,216,0.06) 0%, transparent 60%),
+    var(--color-bg);
+}
+
+.experience h2 {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.experience .section-subtitle {
+  color: var(--color-text-muted);
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0 auto 44px;
+  max-width: 620px;
+}
+
+/* ── Role Card ─────────────────────────────────────────── */
+.role-card {
+  max-width: 960px;
+  margin: 0 auto 28px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  text-align: left;
+}
+
+.role-card:last-child {
+  margin-bottom: 0;
+}
+
+.role-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.role-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.role-meta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.role-company {
+  color: var(--color-accent) !important;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.role-company:hover {
+  text-decoration: underline;
+}
+
+.role-meta-sep {
+  color: var(--color-border);
+  margin: 0 8px;
+}
+
+.role-period {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+
+.role-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-success);
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* ── Metric Tiles ──────────────────────────────────────── */
+.role-metrics {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.metric-tile {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+
+.metric-value {
+  font-family: var(--font-mono);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.1;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.metric-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  display: block;
+}
+
+/* ── Highlights ────────────────────────────────────────── */
+.role-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.role-highlights li {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.role-highlights li:last-child {
+  margin-bottom: 0;
+}
+
+.role-highlights li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-accent);
+  font-size: 14px;
+}
+
+.role-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+@media (max-width: 768px) {
+  .role-card {
+    padding: 24px 20px;
+  }
+  .role-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .role-period {
+    padding-top: 0;
+  }
+  .role-title {
+    font-size: 21px;
+  }
+  .role-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .role-highlights li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience h2 {
+    font-size: 32px;
+  }
+  .role-meta-sep {
+    margin: 0 6px;
+  }
+}

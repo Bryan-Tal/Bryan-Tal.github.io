@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 const educationItems = [
   {
     year: "2024",
-    title: "Google Data Analytics Professional Certificate",
+    title: "Google Advanced Data Analytics Professional Certificate",
     sub: (
       <>
         Google · Coursera ·{" "}
@@ -88,10 +88,15 @@ export const AboutMe = () => {
             <h2 className="about-heading">About Me</h2>
             <p className="about-bio">
               I'm a Data Science graduate from UC San Diego with hands-on experience
-              in Python, machine learning, and data visualization. I've built predictive
-              models that tackle real-world problems in HR, transportation, and healthcare.
-              Always with a focus on translating analysis into clear, actionable insights.
-              I care about communicating the "so what" of data, not just the technical output.
+              in Python, SQL, machine learning, and data visualization. I've built predictive
+              models that tackle real-world problems in HR, transportation, and healthcare,
+              and I now own the data layer behind{" "}
+              <a href="https://puffrepairz.com" target="_blank" rel="noreferrer">PuffRepairz</a>,
+              a production booking and payments platform where I designed the PostgreSQL
+              model and the SQL analytics that track conversion, retention, turnaround,
+              and margin. Always with a focus on translating analysis into clear, actionable
+              insights. I care about communicating the "so what" of data, not just the
+              technical output.
             </p>
 
             <div className="tab-titles">
@@ -203,9 +208,9 @@ export const AboutMe = () => {
             <div className="looking-for">
               <span className="looking-for-label">Currently Looking For</span>
               <p>
-                Full-time roles in data analytics or data engineering. Open to domains
-                across tech, healthcare, finance, or anywhere data drives meaningful
-                decisions. Located in San Diego, CA · Open to remote or hybrid.
+                Full-time data analyst, analytics engineer, or data engineer roles. Open
+                to domains across tech, healthcare, finance, or anywhere data drives
+                meaningful decisions. Located in San Diego, CA · Open to remote or hybrid.
               </p>
             </div>
           </div>

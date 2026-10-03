@@ -47,10 +47,38 @@
   width: 90%;
 }
 
+.banner-current {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.banner-current a {
+  color: var(--color-success) !important;
+  font-weight: 500;
+}
+
+.banner-current a:hover {
+  text-decoration: underline;
+}
+
+.banner-current-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-success);
+  animation: pulse 2s ease-in-out infinite;
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 .banner-credentials {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 44px;
 }

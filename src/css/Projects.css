@@ -156,6 +156,20 @@
   border: 1px solid rgba(63,185,80,0.25);
 }
 
+.domain-tag.fs {
+  color: #A78BFA;
+  background: rgba(124,58,237,0.12);
+  border: 1px solid rgba(124,58,237,0.3);
+}
+
+.project-card-period {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.5px;
+  margin-left: auto;
+}
+
 .project-card-image {
   margin: 14px 20px;
   border-radius: var(--radius);

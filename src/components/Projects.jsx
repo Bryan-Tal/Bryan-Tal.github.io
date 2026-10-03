@@ -8,69 +8,60 @@ import projImg5 from "../assets/img/project-img5.png";
 import { ProjectCard } from "./ProjectCard";
 import "../css/Projects.css";
 
-const FILTERS = ["All", "Machine Learning", "Data Engineering"];
+const FILTERS = ["All", "Machine Learning", "Full-Stack"];
 
 const projects = [
   {
-    title: "NYC Taxi ELT Pipeline",
-    domain: "Data Engineering",
-    status: "under-development",
-    imgUrl: projImg2,
-    projectUrl: "https://github.com/Bryan-Tal/nyc-taxi-elt",
-    impact: [
-      "Batch ELT pipeline over 100M+ NYC TLC trip records into Snowflake",
-      "Medallion architecture (Raw → Staging → Marts) modeled with dbt",
-      "Orchestrated with Apache Airflow 2.10, secured via IAM role assumption",
-    ],
-    stack: ["Python", "Airflow", "dbt", "Snowflake", "AWS S3", "Docker", "GitHub Actions"],
-  },
-  {
-    title: "Predicting Employee Turnover",
+    title: "Predicting Employee Churn",
     domain: "Machine Learning",
+    period: "2025",
     imgUrl: projImg1,
     projectUrl: "https://github.com/Bryan-Tal/Predicting_Employee_Churn",
     impact: [
-      "Random Forest classifier achieving 0.95 AUC and 90% recall on test set",
+      "Random Forest champion: 0.95 AUC, 97.97% accuracy, 90% recall on the held-out test set",
       "Surfaced that 100% of employees with 7 concurrent projects left the company",
-      "Compared 3 classifiers via 5-fold GridSearchCV, refit on ROC-AUC",
+      "Compared Decision Tree, Random Forest, and XGBoost on 11,991 rows via 5-fold GridSearchCV",
     ],
     stack: ["Python", "Random Forest", "XGBoost", "Scikit-learn", "Pandas", "GridSearchCV"],
   },
   {
     title: "Predicting NYC Taxi Gratuities",
     domain: "Machine Learning",
+    period: "2025",
     imgUrl: projImg2,
     projectUrl: "https://github.com/Bryan-Tal/Predicting_NYC_Taxi_Gratuities",
     impact: [
-      "Tuned XGBoost achieved 83% accuracy / 84% F1 on 408k+ trips",
-      "Beat Random Forest baseline by +12.7 F1 points after 5-fold GridSearchCV",
-      "Engineered time-of-day, day-of-week, and rate-code features from raw timestamps",
+      "Tuned XGBoost achieved 83.3% accuracy / 84% F1 on 408,000+ trips",
+      "Beat the Random Forest baseline by +12.7 F1 points after 5-fold GridSearchCV",
+      "Engineered time-of-day, day-of-week, and rate-code features; documented cash-payment survivorship bias",
     ],
-    stack: ["Python", "XGBoost", "Scikit-learn", "Pandas", "Matplotlib"],
+    stack: ["Python", "XGBoost", "Scikit-learn", "Pandas", "GridSearchCV"],
   },
   {
     title: "Predicting House Prices with OLS & Ridge Regression",
     domain: "Machine Learning",
+    period: "2025",
     imgUrl: projImg5,
     projectUrl: "https://github.com/Bryan-Tal/Predicting_House_Prices_OLS",
     impact: [
-      "Implemented OLS and Ridge from scratch using the normal equation in NumPy",
-      "Validated all 5 LR assumptions (Shapiro-Wilk, K-S, VIF, residual plots)",
+      "Implemented OLS and Ridge from scratch using the closed-form normal equation in NumPy",
+      "Validated all 5 OLS assumptions (Shapiro-Wilk, Anderson-Darling, K-S, VIF)",
       "Champion Ridge: R² = 0.66, RMSE = 0.108 across 4 scaling methods × 7 α values",
     ],
-    stack: ["Python", "NumPy", "Pandas", "SciPy", "Matplotlib"],
+    stack: ["Python", "NumPy", "SciPy", "Pandas", "Matplotlib"],
   },
   {
-    title: "MedDash: Health Metrics Dashboard",
-    domain: "Data Engineering",
+    title: "Med-Dash · UC San Diego Capstone",
+    domain: "Full-Stack",
+    period: "Sep 2023 – Mar 2024",
     imgUrl: projImg3,
     projectUrl: "https://github.com/Bryan-Tal/Med-Dash",
     impact: [
-      "Unified data from 5+ wearable sensor types into one view",
-      "Real-time visualization of daily health metrics using React & eCharts",
-      "Designed for healthcare professionals to monitor patient trends",
+      "Personalized dashboard visualizing 3 daily health metrics ingested from the Vital API",
+      "Integrated MongoDB persistence with React + ECharts on a 4-person interdisciplinary team",
+      "Led data validation across 3 wearable sensor types",
     ],
-    stack: ["React", "JavaScript", "CSS", "Python"],
+    stack: ["React", "MongoDB", "ECharts", "Vital API"],
   },
   // {
   //   title: "Visual Analysis of the S&P 500 ETF",
@@ -133,8 +124,8 @@ export const Projects = () => {
             <div>
               <h2>Projects</h2>
               <p className="section-subtitle">
-                A selection of data science and engineering work, each built around a
-                real problem, a deliberate approach, and a measurable outcome.
+                A selection of machine learning and full-stack work, each built around
+                a real problem, a deliberate approach, and a measurable outcome.
               </p>
             </div>
 

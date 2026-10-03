@@ -30,6 +30,14 @@
   margin-bottom: 36px;
 }
 
+.about-bio a {
+  color: var(--color-accent);
+}
+
+.about-bio a:hover {
+  text-decoration: underline;
+}
+
 /* ── Tab Links ─────────────────────────────────────────── */
 .tab-titles {
   display: flex;

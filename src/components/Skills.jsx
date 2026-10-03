@@ -16,6 +16,7 @@ const categories = [
       { name: "Python",     level: 5 },
       { name: "SQL",        level: 4 },
       { name: "JavaScript", level: 4 },
+      { name: "TypeScript", level: 3 },
       { name: "R",          level: 3 },
     ],
   },
@@ -28,42 +29,51 @@ const categories = [
       { name: "XGBoost",             level: 4 },
       { name: "SciPy",               level: 4 },
       { name: "Statistical Testing", level: 4 },
+      { name: "GridSearchCV",        level: 4 },
     ],
   },
   {
-    title: "Data Engineering",
-    skills: [
-      { name: "Apache Airflow", level: 3 },
-      { name: "dbt",            level: 3 },
-      { name: "Snowflake",      level: 3 },
-      { name: "AWS S3 & IAM",   level: 3 },
-      { name: "Docker",         level: 3 },
-      { name: "GitHub Actions", level: 3 },
-    ],
-  },
-  {
-    title: "Data Visualization",
+    title: "Visualization & BI",
     skills: [
       { name: "Tableau",    level: 4 },
       { name: "Matplotlib", level: 4 },
       { name: "Seaborn",    level: 4 },
-      { name: "React eCharts",    level: 3 },
+      { name: "ECharts",    level: 3 },
+      { name: "D3.js",      level: 3 },
     ],
   },
   {
-    title: "Web & Tools",
+    title: "Databases",
     skills: [
-      { name: "React",        level: 4 },
-      { name: "HTML / CSS",   level: 5 },
+      { name: "PostgreSQL",    level: 4 },
+      { name: "Supabase",      level: 4 },
+      { name: "MongoDB",       level: 3 },
+      { name: "MS SQL Server", level: 3 },
+    ],
+  },
+  {
+    title: "Web & Frontend",
+    skills: [
+      { name: "React",      level: 4 },
+      { name: "HTML / CSS", level: 5 },
+      { name: "Recharts",   level: 3 },
+      { name: "Vercel",     level: 4 },
+    ],
+  },
+  {
+    title: "Tools & Workflow",
+    skills: [
       { name: "Git / GitHub", level: 4 },
       { name: "Jupyter",      level: 5 },
+      { name: "Stripe API",   level: 4 },
+      { name: "Claude Code",  level: 4 },
     ],
   },
 ];
 
 const certifications = [
   {
-    name: "Google Data Analytics Professional Certificate",
+    name: "Google Advanced Data Analytics Professional Certificate",
     issuer: "Google · Coursera · 2024",
     url: "https://www.credly.com/badges/d51d1b36-ccfe-4cf4-b63e-a473056ba9cc/public_url",
     icon: "📊",
@@ -83,8 +93,8 @@ export const Skills = () => {
         <div className="skill-inner">
           <h2>Skills</h2>
           <p className="skill-subtitle">
-            Proficient across the full data workflow, from querying and cleaning
-            to modeling, evaluating, and communicating results visually.
+            Proficient across the full data workflow, from designing schemas and
+            querying in SQL to modeling, evaluating, and communicating results visually.
           </p>
 
           <div className="skills-grid">

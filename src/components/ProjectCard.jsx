@@ -4,9 +4,10 @@ const domainClass = {
   "Machine Learning": "ml",
   "Data Viz":         "viz",
   "Data Engineering": "eng",
+  "Full-Stack":       "fs",
 };
 
-export const ProjectCard = ({ title, imgUrl, projectUrl, domain, stack, impact, status }) => {
+export const ProjectCard = ({ title, imgUrl, projectUrl, domain, stack, impact, status, period }) => {
   return (
     <Col sm={12} md={6} lg={4} className="mb-4 d-flex">
       <a href={projectUrl} target="_blank" rel="noreferrer" className="project-card-link">
@@ -16,6 +17,7 @@ export const ProjectCard = ({ title, imgUrl, projectUrl, domain, stack, impact, 
             {status === "under-development" && (
               <span className="wip-badge">In Development</span>
             )}
+            {period && <span className="project-card-period">{period}</span>}
           </div>
 
           <div className="project-card-image">
