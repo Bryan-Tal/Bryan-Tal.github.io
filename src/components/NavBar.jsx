@@ -7,6 +7,15 @@ import { HashLink } from 'react-router-hash-link';
 import { BrowserRouter as Router } from "react-router-dom";
 import '../css/NavBar.css';
 
+// label → the DOM element id the link scrolls to and tracks
+const SECTIONS = [
+  { key: 'home',       label: 'Home',       id: 'home' },
+  { key: 'experience', label: 'Experience', id: 'experience' },
+  { key: 'projects',   label: 'Projects',   id: 'featured' },
+  { key: 'skills',     label: 'Skills',     id: 'skills' },
+  { key: 'about',      label: 'About Me',   id: 'about' },
+];
+
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
@@ -15,45 +24,38 @@ export const NavBar = () => {
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
+      setScrolled(y >= 80);
 
-      if (y < 80) {
-        onUpdateActiveLink('home');
-        setScrolled(false);
-      } else {
-        setScrolled(true);
-        // Rough breakpoints: adjust if section heights shift
-        if (y < 1800) {
-          onUpdateActiveLink('projects');
-        } else if (y < 2600) {
-          onUpdateActiveLink('skills');
-        } else {
-          onUpdateActiveLink('about');
+      // Last section whose top has scrolled up under the navbar wins
+      const offset = 120;
+      let current = SECTIONS[0].key;
+      for (const section of SECTIONS) {
+        const el = document.getElementById(section.id);
+        if (el && el.getBoundingClientRect().top <= offset) {
+          current = section.key;
         }
       }
+      setActiveLink(current);
     };
 
-    window.addEventListener("scroll", onScroll);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const onUpdateActiveLink = (value) => setActiveLink(value);
-
-  // Maps section key → DOM element id used as anchor
-  const sectionIds = { home: 'home', projects: 'featured', skills: 'skills', about: 'about' };
-
   const handleNavClick = (section, e) => {
     e.preventDefault();
-    onUpdateActiveLink(section);
+    setActiveLink(section.key);
     setExpanded(false);
     // Wait for Bootstrap collapse animation before scrolling so layout is stable
     setTimeout(() => {
-      document.getElementById(sectionIds[section])?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' });
     }, 300);
   };
 
   return (
     <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""} expanded={expanded} onToggle={setExpanded}>
+      <Navbar expand="lg" className={scrolled ? "scrolled" : ""} expanded={expanded} onToggle={setExpanded}>
         <Container>
           <Navbar.Brand href="/">
             <img src={logo} alt="Logo" />
@@ -63,34 +65,16 @@ export const NavBar = () => {
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link
-                href="#home"
-                className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'}
-                onClick={(e) => handleNavClick('home', e)}
-              >
-                Home
-              </Nav.Link>
-              <Nav.Link
-                href="#featured"
-                className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'}
-                onClick={(e) => handleNavClick('projects', e)}
-              >
-                Projects
-              </Nav.Link>
-              <Nav.Link
-                href="#skills"
-                className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'}
-                onClick={(e) => handleNavClick('skills', e)}
-              >
-                Skills
-              </Nav.Link>
-              <Nav.Link
-                href="#about"
-                className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'}
-                onClick={(e) => handleNavClick('about', e)}
-              >
-                About Me
-              </Nav.Link>
+              {SECTIONS.map((section) => (
+                <Nav.Link
+                  key={section.key}
+                  href={`#${section.id}`}
+                  className={activeLink === section.key ? 'active navbar-link' : 'navbar-link'}
+                  onClick={(e) => handleNavClick(section, e)}
+                >
+                  {section.label}
+                </Nav.Link>
+              ))}
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">

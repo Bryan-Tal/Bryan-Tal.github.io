@@ -18,7 +18,7 @@ export const FeaturedProject = () => {
 
           <div className="featured-content">
             <h2 className="featured-title">
-              Predicting Employee Turnover with Ensemble Machine Learning
+              Predicting Employee Churn with Ensemble Machine Learning
             </h2>
 
             <div className="featured-case">
@@ -33,19 +33,19 @@ export const FeaturedProject = () => {
               <div className="case-col">
                 <span className="case-col-heading">The Approach</span>
                 <p>
-                  Built and compared Decision Tree, Random Forest, and XGBoost
-                  classifiers via 5-fold GridSearchCV refit on ROC-AUC. The Random
-                  Forest champion exposed satisfaction, project count, and overwork as
-                  top drivers, revealing that 100% of employees with 7 projects left
-                  the company.
+                  Compared Decision Tree, Random Forest, and XGBoost classifiers on an
+                  11,991-row HR dataset via 5-fold GridSearchCV refit on ROC-AUC. The
+                  Random Forest champion exposed satisfaction, project count, and an
+                  engineered overworked feature (&gt;175 hrs/mo) as top drivers,
+                  revealing that 100% of employees with 7 projects left the company.
                 </p>
               </div>
               <div className="case-col">
                 <span className="case-col-heading">The Result</span>
                 <span className="result-metric">0.95 AUC</span>
                 <p>
-                  with 90% recall on identifying at-risk employees, enabling proactive
-                  HR intervention before talent is lost.
+                  with 97.97% accuracy and 90% recall on identifying at-risk employees,
+                  enabling proactive HR intervention before talent is lost.
                 </p>
               </div>
             </div>
@@ -58,7 +58,7 @@ export const FeaturedProject = () => {
 
             <div className="featured-links">
               <a
-                href="https://github.com/Bryan-Tal/Providing_Data_Driven_Suggestions"
+                href="https://github.com/Bryan-Tal/Predicting_Employee_Churn"
                 target="_blank"
                 rel="noreferrer"
                 className="featured-btn-primary"

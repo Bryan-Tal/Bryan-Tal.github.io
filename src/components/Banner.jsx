@@ -22,11 +22,17 @@ export const Banner = () => {
                   <p className="banner-tagline">
                     Turning raw data into decisions that matter.
                   </p>
+                  <p className="banner-current">
+                    <span className="banner-current-dot" />
+                    Currently building{" "}
+                    <a href="https://puffrepairz.com" target="_blank" rel="noreferrer">
+                      PuffRepairz
+                    </a>
+                    , a production booking &amp; payments platform
+                  </p>
                   <div className="banner-credentials">
                     <span className="cred-tag">UC San Diego · B.S. Data Science</span>
-                    <span className="cred-sep">·</span>
-                    <span className="cred-tag">Google Certified Analyst</span>
-                    <span className="cred-sep">·</span>
+                    <span className="cred-tag">Google Advanced Data Analytics</span>
                     <span className="cred-tag cred-tag--building">Building in Data Engineering</span>
                   </div>
                   <div className="banner-ctas">
